@@ -403,8 +403,9 @@ getTransmissionPath() {
 	if [ -f "/etc/fedora-release" ] || [ -f "/etc/debian_version" ] || [ -f "/etc/openwrt_release" ]; then
 		ROOT_FOLDER="/usr/share/transmission"
 	fi
-
-	if [ -f "/bin/freebsd-version" ]; then
+        
+	# add compiled transmission installed on alpine docker base 
+	if [ -f "/bin/freebsd-version" ] || [ -f "/etc/os-release" ]; then
 		ROOT_FOLDER="/usr/local/share/transmission"
 	fi
 
